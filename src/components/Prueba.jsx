@@ -26,7 +26,7 @@ export default function Prueba() {
       )}
       <br/>
       <div className="container">
-        <h1>Buscar CIudad</h1>
+        <h1>Buscar Ciudad</h1>
         <form onSubmit={handleSearch}>
           <div className="input-group">
             <input 
