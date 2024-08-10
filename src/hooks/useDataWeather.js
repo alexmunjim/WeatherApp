@@ -5,7 +5,7 @@ const apiKey = 'a3890157ed8626e855791bd45391b86c';
 const useData = () => {
   const [datos, setDatos] = useState({});
   const [error, setError] = useState(null);
-  const [ciudad, setCiudad] = useState('Cali')
+  const [ciudad, setCiudad] = useState('bogota')
 
   useEffect(() => {
     const fetchData = async () => {

@@ -1,12 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import useData from '../hooks/useDataWeather'
 
 export default function Prueba() {
 
-  const { datos, ciudad, setCiudad } = useData();
+  const { datos, setCiudad } = useData();
+  const [searchCity, setSearchCity] = useState('');
 
-  const handleSearch = () => {
-    setCiudad(ciudad)
+  const handleSearch = (e) => {
+    e.preventDefault(); 
+    setCiudad(searchCity)
   }
 
   return (
@@ -23,13 +25,23 @@ export default function Prueba() {
         <p>Cargando datos...</p>
       )}
       <br/>
-      <input
-        type='texr'
-        value={ciudad}
-        onChange={(e)=>setCiudad(e.target.value)}
-        placeholder='Bucar ciudad'
-      />
-      <button onClick={handleSearch}>Buscar</button>
+      <div className="container">
+        <h1>Buscar CIudad</h1>
+        <form onSubmit={handleSearch}>
+          <div className="input-group">
+            <input 
+              type="text" 
+              id="search"  
+              className="form-control"
+              value={searchCity}
+              onChange={(e) => setSearchCity(e.target.value)}
+            />
+            <button type="submit" className="btn btn-secondary">Buscar</button>
+          </div> 
+        </form>
+
+    </div>
+
     </div>
   )
 }
