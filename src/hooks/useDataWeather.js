@@ -29,7 +29,7 @@ const useData = () => {
     
   }, [ciudad]);
 
-  return { datos, error, ciudad, setCiudad };
+  return { datos, error, setCiudad };
 }
 
 export default useData;
